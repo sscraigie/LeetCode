@@ -28,19 +28,30 @@
 //   return profit;
 // }
 
-//----------Solution 1----------//
+//----------Solution 2----------//
 //Speed: 52.36% 60ms
 //Memory: 98.07% 42.5MB
 
-function maxProfit(prices: number[]): number {
-  let profit = 0;
+// function maxProfit(prices: number[]): number {
+//   let profit = 0;
 
-  for (let index = 0; index < prices.length; index++) {
-    if (prices[index + 1] > prices[index]) {
-      profit = profit + (prices[index + 1] - prices[index]);
-    }
-  }
-  return profit;
+//   for (let index = 0; index < prices.length; index++) {
+//     if (prices[index + 1] > prices[index]) {
+//       profit = profit + (prices[index + 1] - prices[index]);
+//     }
+//   }
+//   return profit;
+// }
+
+//----------Solution 3----------//
+//Speed:
+//Memory:
+
+function maxProfit(prices: number[]): number {
+  return prices.reduce((profit, value, index) => {
+    let p = prices[index + 1] - value;
+    return profit + (p > 0 ? p : 0);
+  }, 0);
 }
 
 console.log(maxProfit([7, 1, 5, 3, 6, 4])); // 7
