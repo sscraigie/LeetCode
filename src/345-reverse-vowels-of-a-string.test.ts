@@ -1,3 +1,5 @@
+import { test, expect } from "vitest";
+
 // ----------Solution 1----------//
 // Speed: 80ms 36.90%
 // Memory: 47.59 MB 99.13%
@@ -57,6 +59,8 @@ function reverseVowels(s: string): string {
   return sArray.join("");
 }
 
-console.log(reverseVowels("hello")); //holle
-console.log(reverseVowels("leetcode")); //leotcede
-console.log(reverseVowels("aA")); //Aa
+test("345: Reverse Vowels of a String", () => {
+  expect(reverseVowels("hello")).toBe("holle");
+  expect(reverseVowels("leetcode")).toBe("leotcede");
+  expect(reverseVowels("aA")).toBe("Aa");
+});

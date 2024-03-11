@@ -1,3 +1,5 @@
+import { test, expect } from "vitest";
+
 // //----------Attempt  1----------//
 // // Speed:   X
 // // Memory:  X
@@ -53,17 +55,12 @@ function coinChange(coins: number[], amount: number): number {
   return cache[amount] == Infinity ? -1 : cache[amount];
 }
 
-console.log("---1---");
-console.log(coinChange([1, 2, 5], 11)); // 3
-console.log("---2---");
-console.log(coinChange([1, 2, 7], 15)); // 3
-console.log("---3---");
-console.log(coinChange([1, 7], 5)); //5
-console.log("---4---");
-console.log(coinChange([2], 3)); // -1
-console.log("---5---");
-console.log(coinChange([1], 0)); // 0
-console.log("---5---");
-console.log(coinChange([2, 5, 10, 1], 27)); //4
-console.log("---6---");
-console.log(coinChange([186, 419, 83, 408], 6249)); //20
+test("322: Coin Change", () => {
+  expect(coinChange([1, 2, 5], 11)).toBe(3);
+  expect(coinChange([1, 2, 7], 15)).toBe(3);
+  expect(coinChange([1, 7], 5)).toBe(5);
+  expect(coinChange([2], 3)).toBe(-1);
+  expect(coinChange([1], 0)).toBe(0);
+  expect(coinChange([2, 5, 10, 1], 27)).toBe(4);
+  expect(coinChange([186, 419, 83, 408], 6249)).toBe(20);
+});

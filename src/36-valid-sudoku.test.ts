@@ -1,3 +1,4 @@
+import { test, expect } from "vitest";
 //----------Solution 1----------//
 // Speed:   75ms 51.21%
 // Memory:  56.06mb 5.07%
@@ -87,5 +88,7 @@ const inValidSudoku = [
   [".", ".", ".", ".", "8", ".", ".", "7", "9"],
 ];
 
-console.log(isValidSudoku(validSudoku)); //true
-console.log(isValidSudoku(inValidSudoku)); //false
+test("36: Valid Sudoku", () => {
+  expect(isValidSudoku(validSudoku)).toBe(true);
+  expect(isValidSudoku(inValidSudoku)).toBe(false);
+});

@@ -1,3 +1,5 @@
+import { test, expect } from "vitest";
+
 //---------- First Atempt----------//
 // Miss understood the problem
 
@@ -108,11 +110,14 @@ function gcdOfStrings(str1: string, str2: string): string {
   return str1.substring(0, gcd(str1.length, str2.length));
 }
 
-//----------Tests----------//
-gcdOfStrings("ABCABC", "ABC"); // "ABC"
-gcdOfStrings("ABABAB", "ABAB"); // "ABAB"
-gcdOfStrings("LEET", "CODE"); // ""
-gcdOfStrings(
-  "TAUXXTAUXXTAUXXTAUXXTAUXX", //25
-  "TAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXX" //45
-); //"TAUXX"
+test.skip("1071: Greatest Common Divisor of Strings", () => {
+  expect(gcdOfStrings("ABCABC", "ABC")).toBe("ABC");
+  expect(gcdOfStrings("ABABAB", "ABAB")).toBe("ABAB");
+  expect(gcdOfStrings("LEET", "CODE")).toBe("");
+  expect(
+    gcdOfStrings(
+      "TAUXXTAUXXTAUXXTAUXXTAUXX", //25
+      "TAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXX" //45
+    )
+  ).toBe("TAUXX");
+});

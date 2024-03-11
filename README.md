@@ -27,16 +27,16 @@ To get a local copy up and running follow these steps.
 
 ### Usage
 
-You can write your code with in the `index.ts` file or archive you're solutions in the `src` directory.
+You can write your code within the `index.ts` file or archive you're solutions in the `src` directory.
 
 To run index.ts:
 
 ```sh
-npm run index
+npm run test index
 ```
 
 To run a specific file:
 
 ```sh
-npn run start src/<file-name>.ts
+npn run test <file name>
 ```

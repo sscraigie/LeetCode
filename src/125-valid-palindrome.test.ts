@@ -1,3 +1,5 @@
+import { test, expect } from "vitest";
+
 //----------Solution 1----------//
 //Speed: 54.32% 70ms
 //Memory: 93.41% 52.6MB
@@ -38,6 +40,8 @@ function isPalindrome(s: string): boolean {
   return true;
 }
 
-isPalindrome("A man, a plan, a canal: Panama"); // true
-isPalindrome("race a car"); // false
-isPalindrome(" "); //true
+test("125: Valid Palindrome", () => {
+  expect(isPalindrome("A man, a plan, a canal: Panama")).toBe(true);
+  expect(isPalindrome("race a car")).toBe(false);
+  expect(isPalindrome(" ")).toBe(true);
+});

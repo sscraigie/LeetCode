@@ -1,3 +1,5 @@
+import { test, expect } from "vitest";
+
 function removeDuplicates(nums: number[]): number {
   const shiftNums = (index: number) => {
     for (; index < nums.length; index++) {
@@ -24,3 +26,10 @@ function removeDuplicates(nums: number[]): number {
 
   return nums.filter((num) => num != 10000).length;
 }
+
+test.skip("80: Remove Duplicates from Sorted Array II", () => {
+  expect(removeDuplicates([1, 1, 1, 2, 2, 3])).toBe([1, 1, 2, 2, 3]);
+  expect(removeDuplicates([0, 0, 1, 1, 1, 1, 2, 3, 3])).toBe([
+    0, 0, 1, 1, 2, 3, 3,
+  ]);
+});

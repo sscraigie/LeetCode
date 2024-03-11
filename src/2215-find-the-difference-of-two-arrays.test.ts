@@ -1,3 +1,5 @@
+import { test, expect } from "vitest";
+
 //----------Solution 1----------//
 // Speed:   148 ms   19.92%
 // Memory:  47.6 MB  98.61%
@@ -27,6 +29,11 @@ function findDifference(nums1: number[], nums2: number[]): any {
   return result;
 }
 
-console.log(findDifference([1, 2, 3], [2, 4, 6])); // [[1,3],[4,6]]
-console.log(findDifference([1, 2, 3], [1, 2, 3])); // [[],[]
-console.log(findDifference([1, 2, 3, 3], [1, 1, 2, 2])); // [[3],[]]
+test("2215: Find the Difference of Two Arrays", () => {
+  expect(findDifference([1, 2, 3], [2, 4, 6])).toEqual([
+    [1, 3],
+    [4, 6],
+  ]);
+  expect(findDifference([1, 2, 3], [1, 2, 3])).toEqual([[], []]);
+  expect(findDifference([1, 2, 3, 3], [1, 1, 2, 2])).toEqual([[3], []]);
+});

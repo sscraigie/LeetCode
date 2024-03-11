@@ -1,3 +1,5 @@
+import { test, expect } from "vitest";
+
 //----------Solution 1----------//
 //Speed: 16.88% 68ms
 //Memory: 96.72% 42.7MB
@@ -54,6 +56,8 @@ function maxProfit(prices: number[]): number {
   }, 0);
 }
 
-console.log(maxProfit([7, 1, 5, 3, 6, 4])); // 7
-console.log(maxProfit([1, 2, 3, 4, 5])); // 4
-console.log(maxProfit([7, 6, 4, 3, 1])); // 0
+test("122: Best Time to Buy and Sell Stock II", () => {
+  expect(maxProfit([7, 1, 5, 3, 6, 4])).toBe(7);
+  expect(maxProfit([1, 2, 3, 4, 5])).toBe(4);
+  expect(maxProfit([7, 6, 4, 3, 1])).toBe(0);
+});

@@ -1,3 +1,4 @@
+import { test, expect } from "vitest";
 function lengthOfLongestSubstring(s: string): number {
   let longestSubstring = 0;
   for (let x = 0; x < s.length; x++) {
@@ -24,6 +25,12 @@ function lengthOfLongestSubstring(s: string): number {
   return longestSubstring;
 }
 
-// lengthOfLongestSubstring("abcabcbb"); // 3
-// lengthOfLongestSubstring("pwwkew"); // 3
-lengthOfLongestSubstring("aux"); // 3
+test("3: Longest Substring Without Repeating Characters", () => {
+  expect(lengthOfLongestSubstring("abcabcbb")).toBe(3);
+  expect(lengthOfLongestSubstring("pwwkew")).toBe(3);
+  expect(lengthOfLongestSubstring("aux")).toBe(3);
+  expect(lengthOfLongestSubstring("")).toBe(0);
+  expect(lengthOfLongestSubstring("a")).toBe(1);
+  expect(lengthOfLongestSubstring("bbbbb")).toBe(1);
+  expect(lengthOfLongestSubstring("abcdefg")).toBe(7);
+});

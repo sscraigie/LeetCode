@@ -1,3 +1,4 @@
+import { test, expect } from "vitest";
 //----------Solution 1----------//
 //Speed: 50.37%
 //Memory: 16.69%
@@ -25,8 +26,10 @@ function jump(nums: number[]): number {
   return jumps;
 }
 
-console.log(canJump([2, 3, 1, 1, 4])); // 2
-console.log(canJump([0])); // 0
-console.log(canJump([2, 0])); //1
-console.log(canJump([2, 0, 0])); //1
-console.log(canJump([2, 5, 0, 0])); //2
+test("45: Jump Game II", () => {
+  expect(jump([2, 3, 1, 1, 4])).toBe(2);
+  expect(jump([0])).toBe(0);
+  expect(jump([2, 0])).toBe(1);
+  expect(jump([2, 0, 0])).toBe(1);
+  expect(jump([2, 5, 0, 0])).toBe(2);
+});

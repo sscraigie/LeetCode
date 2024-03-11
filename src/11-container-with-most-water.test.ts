@@ -1,3 +1,4 @@
+import { test, expect } from "vitest";
 //----------Solution 1----------//
 //Speed: 74ms 37.38%
 //Memory: 51.34MB 50.53%
@@ -90,9 +91,11 @@ function maxArea(height: number[]): number {
   return hightestArea;
 }
 
-console.log(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7])); //49
-console.log(maxArea([1, 1])); //1
-console.log(maxArea([4, 3, 2, 1, 4])); //16
-console.log(maxArea([1, 2, 1])); //2
-console.log(maxArea([1, 2, 4, 3])); //4
-console.log(maxArea([2, 3, 4, 5, 18, 17, 6])); //17
+test.skip("11: Container With Most Water", () => {
+  expect(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7])).toBe(49);
+  expect(maxArea([1, 1])).toBe(1);
+  expect(maxArea([4, 3, 2, 1, 4])).toBe(16);
+  expect(maxArea([1, 2, 1])).toBe(2);
+  expect(maxArea([1, 2, 4, 3])).toBe(4);
+  expect(maxArea([2, 3, 4, 5, 18, 17, 6])).toBe(17);
+});

@@ -1,3 +1,5 @@
+import { test, expect } from "vitest";
+
 //----------Solution 1----------//
 //Speed: 29%
 //Memory: 35.87%
@@ -93,3 +95,10 @@ mergeAlternately("abc", "pqr"); // "apbqcr"
 mergeAlternately("ab", "pqrs"); // "apbqrs"
 mergeAlternately("abcd", "pq"); // "apbqcd"
 mergeAlternately("ab", "pqrs"); // "apbqrs"
+
+test("1769: Merge Strings Alternately", () => {
+  expect(mergeAlternately("abc", "pqr")).toBe("apbqcr");
+  expect(mergeAlternately("ab", "pqrs")).toBe("apbqrs");
+  expect(mergeAlternately("abcd", "pq")).toBe("apbqcd");
+  expect(mergeAlternately("ab", "pqrs")).toBe("apbqrs");
+});

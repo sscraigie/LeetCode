@@ -1,3 +1,5 @@
+import { test, expect } from "vitest";
+
 //----------Attempt 1----------//
 //Timed Out
 
@@ -64,5 +66,7 @@ function removeStars(s: string): string {
   return result.join("");
 }
 
-console.log(removeStars("leet**cod*e")); // "lecoe"
-console.log(removeStars("erase*****")); // ""
+test("2390: Removing Stars from a String", () => {
+  expect(removeStars("leet**cod*e")).toBe("lecoe");
+  expect(removeStars("erase*****")).toBe("");
+});

@@ -1,3 +1,5 @@
+import { test, expect } from "vitest";
+
 //----------Solution 1----------//
 //Speed: 14.70% 65ms
 //Memory: 7.28% 44.77MB
@@ -19,10 +21,10 @@
 //Speed: 5.15% 5327MS
 //Memory: 94.6% 42.1MB
 
-function isSubsequence(s, t) {
-  let regex = new RegExp(s.split("").join(".*"));
-  return regex.test(t);
-}
+// function isSubsequence(s, t) {
+//   let regex = new RegExp(s.split("").join(".*"));
+//   return regex.test(t);
+// }
 
 //----------Solution 3----------//
 //Speed: 62ms 25.69%
@@ -61,3 +63,8 @@ function isSubsequence(s: string, t: string): boolean {
   }
   return sp === s.length;
 }
+
+test("392: Is Subsequence", () => {
+  expect(isSubsequence("abc", "ahbgdc")).toBe(true);
+  expect(isSubsequence("axc", "ahbgdc")).toBe(false);
+});

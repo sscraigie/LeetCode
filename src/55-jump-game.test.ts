@@ -1,3 +1,4 @@
+import { test, expect } from "vitest";
 //----------Solution 1----------//
 //Speed: 52.67% 70ms
 //Memory: 10.12% 52.6MB
@@ -47,10 +48,12 @@ function canJump(nums: number[]): boolean {
   return isSumLastIndex(0);
 }
 
-console.log(canJump([2, 3, 1, 1, 4])); // true
-console.log(canJump([3, 2, 1, 0, 4])); // false
-console.log(canJump([0])); // true
-console.log(canJump([1, 0, 1, 0])); // false
-console.log(canJump([2, 0])); //true
-console.log(canJump([2, 0, 0])); //true
-console.log(canJump([2, 5, 0, 0])); //true
+test("55: Jump Game", () => {
+  expect(canJump([2, 3, 1, 1, 4])).toBe(true);
+  expect(canJump([3, 2, 1, 0, 4])).toBe(false);
+  expect(canJump([0])).toBe(true);
+  expect(canJump([1, 0, 1, 0])).toBe(false);
+  expect(canJump([2, 0])).toBe(true);
+  expect(canJump([2, 0, 0])).toBe(true);
+  expect(canJump([2, 5, 0, 0])).toBe(true);
+});

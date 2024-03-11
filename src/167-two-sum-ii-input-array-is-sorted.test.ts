@@ -1,3 +1,5 @@
+import { test, expect } from "vitest";
+
 //----------Solution 1----------//
 //Speed: 5.07% 1953ms
 //Memory: 5.20% 46.58MB
@@ -38,3 +40,9 @@ function twoSum(numbers: number[], target: number): number[] {
   }
   return [0, 0]; //Should't happen
 }
+
+test("167: Two Sum II - Input array is sorted", () => {
+  expect(twoSum([2, 7, 11, 15], 9)).toEqual([1, 2]);
+  expect(twoSum([2, 3, 4], 6)).toEqual([1, 3]);
+  expect(twoSum([-1, 0], -1)).toEqual([1, 2]);
+});
